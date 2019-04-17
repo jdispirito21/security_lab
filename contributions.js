@@ -63,7 +63,7 @@ function handleContributionsUpdate(req,res,next)
 {
    // convert to numbers
 	console.log("HELLO"); 
-   var preTax = JSON.parse(req.body.preTax);
+   var preTax = parseInt(req.body.preTax);
    var afterTax = JSON.parse(req.body.afterTax);
    var roth = JSON.parse(req.body.roth);
 
