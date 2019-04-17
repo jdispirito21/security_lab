@@ -70,7 +70,7 @@ function handleContributionsUpdate(req,res,next)
    var userId = req.session.userId;
 
    //validate contributions
-   if (isNan(preTax)|| isNaN(afterTax) || isNaN(roth) || preTax > 0 || afterTax < 0 || roth < 0) {
+   if (isNan(preTax)|| isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
 	   console.log("HERE");
       return res.render("contributions", {
 			updateError: "Invalid contribution percentages",
