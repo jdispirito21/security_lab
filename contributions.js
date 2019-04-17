@@ -63,9 +63,9 @@ function handleContributionsUpdate(req,res,next)
 {
    // convert to numbers
 	console.log("HELLO"); 
-   var preTax = req.body.preTax;
-   var afterTax = req.body.afterTax;
-   var roth = req.body.roth;
+   var preTax = eval(req.body.preTax);
+   var afterTax = eval(req.body.afterTax);
+   var roth = eval(req.body.roth);
 
    var userId = req.session.userId;
 
