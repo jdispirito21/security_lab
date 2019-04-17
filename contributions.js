@@ -62,6 +62,7 @@ function displayContributions1(req,res,next,sts,err,data)
 function handleContributionsUpdate(req,res,next)
 {
    // convert to numbers
+	console.log("HELLO"); 
    var preTax = eval(req.body.preTax);
    var afterTax = eval(req.body.afterTax);
    var roth = eval(req.body.roth);
@@ -70,6 +71,7 @@ function handleContributionsUpdate(req,res,next)
 
    //validate contributions
    if (isNaN(preTax) || isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
+	   console.log("HERE");
       return res.render("contributions", {
 			updateError: "Invalid contribution percentages",
 				  userId: userId
