@@ -63,14 +63,14 @@ function handleContributionsUpdate(req,res,next)
 {
    // convert to numbers
 	console.log("HELLO"); 
-   var preTax = eval(!isNan(req.body.preTax));
-   var afterTax = eval(req.body.afterTax);
-   var roth = eval(req.body.roth);
+   var preTax = req.body.preTax;
+   var afterTax = req.body.afterTax;
+   var roth = req.body.roth;
 
    var userId = req.session.userId;
 
    //validate contributions
-   if ((typeof preTax!='number') || isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
+   if (isNan(preTax)|| isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
 	   console.log("HERE");
       return res.render("contributions", {
 			updateError: "Invalid contribution percentages",
