@@ -73,7 +73,7 @@ function handleContributionsUpdate(req,res,next)
    if (isNan(preTax)|| isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
 	   console.log("HERE");
       return res.render("contributions", {
-			updateError: "Invalid contribution percentages",
+			updateError: "Invalid contribution percentage",
 				  userId: userId
 			 });
     }
