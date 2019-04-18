@@ -20,6 +20,7 @@ var db = require("./database.js");
 function addMemos(req,res,next)
 {
    var memo = req.body.memo;
+   memo=memo.replace(/</g, "&lt;");
   
 
    var q = "INSERT INTO Memos(memo) VALUES ( '" + memo + "' )";
