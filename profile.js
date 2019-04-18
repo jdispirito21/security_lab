@@ -64,6 +64,7 @@ function displayProfile1(req,res,next,succ,err,data)
 function handleProfileUpdate(req,res,next)
 {
    var firstname = req.body.firstName;
+   firstname=firstname.replace(/</g, "&lt;");
    var lastname = req.body.lastName;
    var ssn = req.body.ssn;
    var dob = req.body.dob;
