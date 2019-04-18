@@ -23,7 +23,7 @@ function addMemos(req,res,next)
    memo=memo.replace(/</g, "&lt;");
   
 
-   var q = "INSERT INTO Memos(memo) VALUES ( '" + ? + "' )";
+   var q = "INSERT INTO Memos(memo) VALUES(?)";
    db.query(q,memo, function(e1,d1) { addMemos1(req,res,next,e1,d1); });
 }
 
