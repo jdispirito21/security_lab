@@ -71,14 +71,13 @@ function handleContributionsUpdate(req,res,next)
 
    //validate contributions
    if (isNaN(preTax)|| isNaN(afterTax) || isNaN(roth) || preTax < 0 || afterTax < 0 || roth < 0) {
-	   console.log("HERE");
       return res.render("contributions", {
 			updateError: "Invalid contribution percentage",
 				  userId: userId
 			 });
     }
    // Prevent more than 30% contributions
-   if (preTax + afterTax + roth > 60) {
+   if (preTax + afterTax + roth > 30) {
       return res.render("contributions", {
 			updateError: "Contribution percentages cannot exceed 30 %",
 				  userId: userId
